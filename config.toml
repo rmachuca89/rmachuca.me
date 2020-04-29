@@ -1,4 +1,4 @@
-baseURL = "http://www.rmachuca.me/"
+baseURL = "https://www.rmachuca.me/"
 title = "About Me"
 theme = "hugo-coder"
 languageCode = "en-us"
