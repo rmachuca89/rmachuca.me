@@ -1,0 +1,86 @@
+baseURL = "http://www.rmachuca.me/"
+title = "About Me"
+theme = "hugo-coder"
+languageCode = "en-us"
+defaultcontentlanguage = "en"
+
+enableRobotsTXT = true
+
+paginate = 10
+canonifyurls = true
+
+pygmentsstyle = "bw"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+disqusShortname = "Rodrigo"
+
+[params]
+  author = "Rodrigo Machuca"
+  info = "Systems Administrator @Google"
+  description = "Rodrigo Machuca Personal Website"
+  keywords = "blog,developer,personal"
+  avatarurl = "images/profile.jpg"
+  # gravatar = "rmachuca89@hotmail.com"
+
+  # Specify light/dark colorscheme
+  # Supported values:
+  # "auto" (use preference set by browser)
+  # "dark" (dark background, light foreground)
+  # "light" (light background, dark foreground) (default)
+  colorscheme = "auto"
+
+  favicon_32 = "/img/favicon-32x32.png"
+  favicon_16 = "/img/favicon-16x16.png"
+
+  hidefooter = false
+  footercontent = "This site expresses only my personal opinion."
+  # Git Commit in Footer, uncomment the line below to enable it.
+  commit = "https://github.com/rmachuca89/rmachuca.me/tree/"
+
+  hidecredits = false
+  hidecopyright = false
+  since = 2014
+
+  rtl = false
+
+  # Toggle MathJax Module and add JS into your site
+  math = false
+  # custom_css = ["css/custom.css"]
+  # custom_js = []
+
+  # Series see also post count
+  maxSeeAlsoItems = 5
+
+# Social links
+[[params.social]]
+  name = "github"
+  url = "https://github.com/rmachuca89"
+  icon = "fab fa-github fa-2x"
+  weight = 1
+[[params.social]]
+  name = "twitter"
+  url = "https://twitter.com/rmachuca89"
+  icon = "fab fa-twitter fa-2x"
+  weight = 2
+[[params.social]]
+  name = "linkedIn"
+  icon = "fab fa-linkedin fa-2x"
+  weight = 3
+  url = "https://linkedin.com/in/rmachuca89/"
+
+# Menu links
+[[menu.main]]
+  name = "Blog"
+  weight = 1
+  url  = "/posts/"
+[[menu.main]]
+  name = "About"
+  weight = 2
+  url = "/about/"
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+
