@@ -1,5 +1,5 @@
 baseURL = "https://www.rmachuca.me/"
-title = "About Me"
+title = "rmachuca.me"
 theme = "hugo-coder"
 languageCode = "en-us"
 defaultcontentlanguage = "en"
@@ -15,13 +15,15 @@ pygmentscodefencesguesssyntax = true
 
 disqusShortname = "Rodrigo"
 
+googleAnalytics = "UA-177199983-1"
+
 [params]
+# Ref: https://github.com/luizdepra/hugo-coder/wiki/Configurations
   author = "Rodrigo Machuca"
   info = "Systems Administrator @Google"
   description = "Rodrigo Machuca Personal Website"
-  keywords = "blog,developer,personal"
+  keywords = "blog,developer,portfolio,sysadmin,projects"
   avatarurl = "images/profile.jpg"
-  # gravatar = "rmachuca89@hotmail.com"
 
   # Specify light/dark colorscheme
   # Supported values:
@@ -30,8 +32,8 @@ disqusShortname = "Rodrigo"
   # "light" (light background, dark foreground) (default)
   colorscheme = "auto"
 
-  favicon_32 = "/img/favicon-32x32.png"
-  favicon_16 = "/img/favicon-16x16.png"
+  # favicon_32 = "/img/favicon-32x32.png"
+  # favicon_16 = "/img/favicon-16x16.png"
 
   hidefooter = false
   footercontent = "This site expresses only my personal opinion."
@@ -40,8 +42,9 @@ disqusShortname = "Rodrigo"
 
   hidecredits = false
   hidecopyright = false
-  since = 2014
+  since = 2020
 
+  # Enable the Right to Left rendering mode
   rtl = false
 
   # Toggle MathJax Module and add JS into your site
@@ -71,13 +74,22 @@ disqusShortname = "Rodrigo"
 
 # Menu links
 [[menu.main]]
-  name = "Blog"
+  name = "About"
   weight = 1
+  url = "/about/"
+[[menu.main]]
+  name = "Blog"
+  weight = 2
   url  = "/posts/"
 [[menu.main]]
-  name = "About"
-  weight = 2
-  url = "/about/"
+  name = "Projects"
+  weight = 3
+  url  = "/projects/"
+
+# TODO: Add Spanish link once I do the i18n
+# Ref:
+# - https://github.com/luizdepra/hugo-coder/wiki/Multilingual-Mode
+# - https://github.com/luizdepra/hugo-coder/blob/master/exampleSite/config.toml
 
 [taxonomies]
   category = "categories"
