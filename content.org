@@ -3,8 +3,11 @@
 #+DESCRIPTION: org-mode markup content to be parsed and rendered into CommonMarkdown by ox-hugo
 #+STARTUP: overview
 #+HUGO_BASE_DIR: .
-#+HUGO_SECTION: posts
 * Blog Posts
+:PROPERTIES:
+:ID:       8f96bc48-db00-4e71-ac40-f8ab75f14790
+:EXPORT_HUGO_SECTION: posts
+:END:
 ** DONE Motivation and Blog Content Focus
 CLOSED: [2020-09-04 Fri 21:46]
 :PROPERTIES:
@@ -48,3 +51,45 @@ I will be focusing in the beginning on the following areas or technologies:
 
 If time and motivation keeps going, I will expand the content to Spanish (my
 native language) once I learn about [[https://gohugo.io/content-management/multilingual/][Hugo internationalization (i18n)]].
+* DONE About
+CLOSED: [2020-09-04 Fri 23:40]
+:PROPERTIES:
+:ID:       ebf5af50-b654-4afe-9f0e-8c37059dcc9e
+:EXPORT_HUGO_SECTION: .
+:EXPORT_FILE_NAME: about
+:EXPORT_TITLE: About Me
+:EXPORT_DATE: 2020-09-04
+:END:
+
+This is the content of my about page.
+
+Hello!
+
+I'm Rodrigo Machuca, a Linux geek, coffee drinker, video game enthusiast, wanna
+be bass player and TV series cruncher (animated sitcoms, sci-fi, shounen anime).
+
+Born and raised in [[https://en.wikipedia.org/wiki/Le%C3%B3n,_Guanajuato][León, Guanajuato. México]]. I have been attracted into
+tinkering and trying to understand how do things click since the beginning of my
+childhood... /even when that meant to fully disassemble my own crib at small
+age!/
+
+When I was around 8 years old I got contact with what would become one of the
+most important artifacts in my formation: [[https://en.wikipedia.org/wiki/Atari_2600][The Atari 2600]] console. I was just
+amazed on how much could be done just by /having the control/ to move pixels. It
+felt empowering and interactive. Later, during my primary school I got
+introduced to my first computer: The [[https://en.wikipedia.org/wiki/Power_Macintosh_5200_LC][Power Macintosh 5200]]. Although not the most
+recognizable model from the Mac family, being a curious youngster it checked all
+my boxes: point, click and interact! My personal interest in electronics
+skyrocketed after that and it was not long before I was begging my mom to get my
+own for my personal use (homework and studying of course). She was hesitant as
+we had really constrained economic power; but after some persuasion and
+reference data, we could get a "franki-machine", a computer built from some
+scraping materials from my mom job network. It did not take long to install it
+one of the most influencial games in my life, [[https://en.wikipedia.org/wiki/Age_of_Empires_II][Age of Empires II]], and the
+snowballing effect of video games, computers and trying to understand them (even
+if just to be able to play with my friend online) spiraled and got me into this
+exiting never ending rabbit hole.
+
+Nowadays, after finishing my *Computer Systems Engineering* bachelor degree,
+have had the opportunity to work in a variety of radical different industries,
+including /Banking, Video Games, Web Hosting and Google/
