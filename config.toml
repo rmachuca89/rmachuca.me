@@ -38,7 +38,7 @@ googleAnalytics = "UA-177199983-1"
   hidefooter = false
   footercontent = "This site expresses only my personal opinion."
   # Git Commit in Footer, uncomment the line below to enable it.
-  commit = "https://github.com/rmachuca89/rmachuca.me/tree/"
+  # commit = "https://github.com/rmachuca89/rmachuca.me/tree/"
 
   hidecredits = false
   hidecopyright = false
