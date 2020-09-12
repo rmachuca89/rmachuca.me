@@ -3,6 +3,48 @@
 #+DESCRIPTION: org-mode markup content to be parsed and rendered into CommonMarkdown by ox-hugo
 #+STARTUP: overview
 #+HUGO_BASE_DIR: .
+* DONE About
+CLOSED: [2020-09-04 Fri 23:40]
+:PROPERTIES:
+:ID:       ebf5af50-b654-4afe-9f0e-8c37059dcc9e
+:EXPORT_HUGO_SECTION: about
+:EXPORT_FILE_NAME: _index
+:EXPORT_TITLE: About Me
+:EXPORT_DATE: 2020-09-04
+:END:
+
+This is the content of my about page.
+
+Hello!
+
+I'm Rodrigo Machuca, a Linux geek, coffee drinker, video game enthusiast, wanna
+be bass player and TV series cruncher (animated sitcoms, sci-fi, shounen anime).
+
+Born and raised in [[https://en.wikipedia.org/wiki/Le%C3%B3n,_Guanajuato][León, Guanajuato. México]]. I have been attracted into
+tinkering and trying to understand how do things click since the beginning of my
+childhood... /even when that meant to fully disassemble my own crib at small
+age!/
+
+When I was around 8 years old I got contact with what would become one of the
+most important artifacts in my formation: [[https://en.wikipedia.org/wiki/Atari_2600][The Atari 2600]] console. I was just
+amazed on how much could be done just by /having the control/ to move pixels. It
+felt empowering and interactive. Later, during my primary school I got
+introduced to my first computer: The [[https://en.wikipedia.org/wiki/Power_Macintosh_5200_LC][Power Macintosh 5200]]. Although not the most
+recognizable model from the Mac family, being a curious youngster it checked all
+my boxes: point, click and interact! My personal interest in electronics
+skyrocketed after that and it was not long before I was begging my mom to get my
+own for my personal use (homework and studying of course). She was hesitant as
+we had really constrained economic power; but after some persuasion and
+reference data, we could get a "franki-machine", a computer built from some
+scraping materials from my mom job network. It did not take long to install it
+one of the most influencial games in my life, [[https://en.wikipedia.org/wiki/Age_of_Empires_II][Age of Empires II]], and the
+snowballing effect of video games, computers and trying to understand them (even
+if just to be able to play with my friend online) spiraled and got me into this
+exiting never ending rabbit hole.
+
+Nowadays, after finishing my *Computer Systems Engineering* bachelor degree,
+have had the opportunity to work in a variety of radical different industries,
+including /Banking, Video Games, Web Hosting and Google/
 * Blog Posts
 :PROPERTIES:
 :ID:       8f96bc48-db00-4e71-ac40-f8ab75f14790
@@ -51,45 +93,111 @@ I will be focusing in the beginning on the following areas or technologies:
 
 If time and motivation keeps going, I will expand the content to Spanish (my
 native language) once I learn about [[https://gohugo.io/content-management/multilingual/][Hugo internationalization (i18n)]].
-* DONE About
-CLOSED: [2020-09-04 Fri 23:40]
+** DONE ~go-get~ and Private Repositories :golang:
+CLOSED: [2020-09-12 Sat 16:38]
 :PROPERTIES:
-:ID:       ebf5af50-b654-4afe-9f0e-8c37059dcc9e
-:EXPORT_HUGO_SECTION: .
-:EXPORT_FILE_NAME: about
-:EXPORT_TITLE: About Me
-:EXPORT_DATE: 2020-09-04
+:ID:       347dd1d1-4bae-48cb-b13e-156490d15315
+:EXPORT_FILE_NAME: go-get-and-private-repositories
 :END:
 
-This is the content of my about page.
+Under the hood, ~go get~ is using the ~git~ client to /pull/ the specified
+packages. That means that the client should have the appropriate authentication
+methods setup in advance to access any private repositories.
 
-Hello!
+If using a private repository, you will get the following error when trying to
+download a package:
 
-I'm Rodrigo Machuca, a Linux geek, coffee drinker, video game enthusiast, wanna
-be bass player and TV series cruncher (animated sitcoms, sci-fi, shounen anime).
+#+BEGIN_EXAMPLE
+$ go get github.com/rmachuca89/go-lab
+# cd .; git clone -- https://github.com/rmachuca89/go-lab /home/rmachuca/go/src/github.com/rmachuca89/go-lab
+Cloning into '/home/rmachuca/go/src/github.com/rmachuca89/go-lab'...
+fatal: could not read Username for 'https://github.com': terminal prompts disabled
+package github.com/rmachuca89/go-lab: exit status 128
+#+END_EXAMPLE
 
-Born and raised in [[https://en.wikipedia.org/wiki/Le%C3%B3n,_Guanajuato][León, Guanajuato. México]]. I have been attracted into
-tinkering and trying to understand how do things click since the beginning of my
-childhood... /even when that meant to fully disassemble my own crib at small
-age!/
+To make it work as we expect, we will need to make ~go get~ change the default
+authentication protocol, using one of the options below.
 
-When I was around 8 years old I got contact with what would become one of the
-most important artifacts in my formation: [[https://en.wikipedia.org/wiki/Atari_2600][The Atari 2600]] console. I was just
-amazed on how much could be done just by /having the control/ to move pixels. It
-felt empowering and interactive. Later, during my primary school I got
-introduced to my first computer: The [[https://en.wikipedia.org/wiki/Power_Macintosh_5200_LC][Power Macintosh 5200]]. Although not the most
-recognizable model from the Mac family, being a curious youngster it checked all
-my boxes: point, click and interact! My personal interest in electronics
-skyrocketed after that and it was not long before I was begging my mom to get my
-own for my personal use (homework and studying of course). She was hesitant as
-we had really constrained economic power; but after some persuasion and
-reference data, we could get a "franki-machine", a computer built from some
-scraping materials from my mom job network. It did not take long to install it
-one of the most influencial games in my life, [[https://en.wikipedia.org/wiki/Age_of_Empires_II][Age of Empires II]], and the
-snowballing effect of video games, computers and trying to understand them (even
-if just to be able to play with my friend online) spiraled and got me into this
-exiting never ending rabbit hole.
+**** Force Terminal Prompt with HTTPS Authentication
 
-Nowadays, after finishing my *Computer Systems Engineering* bachelor degree,
-have had the opportunity to work in a variety of radical different industries,
-including /Banking, Video Games, Web Hosting and Google/
+~go get~ disables the "terminal prompt" by default, but can be re-enabled by
+configuring the ~GIT_TERMINAL_PROMPT~ environmental variable, either at command
+runtime , or by updating our =.bashrc= or equivalent depending on the shell you
+are using (=zsh=, =fish=, etc.)
+
+A simple example would be:
+
+#+BEGIN_SRC shell
+env GIT_TERMINAL_PROMPT=1 go get github.com/<USERNAME>/<MY_PRIVATE_REPO>
+#+END_SRC
+
+Replace =USERNAME= and =MY_PRIVATE_REPO= accordingly.
+
+This would ask for your provider Username and Password (or Access Token):
+
+#+BEGIN_EXAMPLE
+$ env GIT_TERMINAL_PROMPT=1 go get github.com/rmachuca89/go-lab
+Username for 'https://github.com': rmachuca89
+Password for 'https://rmachuca89@github.com':
+#+END_EXAMPLE
+
+*WARNING*: Making this change persistent may cause undesirable effects as it
+would be considered for every ~go get~ command, which is designed to be
+*non-interactive*. I would suggest you use it only for /ad-hoc one time tasks/
+and configure other options mentioned in this article for long-term solutions.
+
+*INFO*: If using [[https://docs.github.com/en/github/authenticating-to-github/configuring-two-factor-authentication][Two Factor Authentication (2FA)]] you will have to use a [[https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token][Personal
+Access Token (PAT)]] or use [[id:5bb5b347-2bf0-41f9-b307-0cc30a83d841][SSH authentication]] instead. Reference: [[https://docs.github.com/en/github/authenticating-to-github/accessing-github-using-two-factor-authentication#using-two-factor-authentication-with-the-command-line][Using
+two-factor authentication with the command line - docs.github.com]]
+
+Personal access tokens function like ordinary OAuth access tokens. They can be
+used instead of a password for Git over HTTPS. We require at least the [[https://docs.github.com/en/developers/apps/scopes-for-oauth-apps][=repo=
+scope]] for it to work.
+
+**** Use SSH instead of HTTPS:
+:PROPERTIES:
+:ID:       5bb5b347-2bf0-41f9-b307-0cc30a83d841
+:END:
+
+You can configure ~git~ client to authenticate using ~SSH~ for matching /URL
+prefix/ as default. The exact command may vary depending on which provider you
+are using (GitLab, BitBucket), so make sure you /adjust the domain name/ as
+required.
+
+GitHub:
+
+: git config --global url."ssh://git@github.com:".insteadOf "https://github.com/"
+
+This is actually updating the =.gitconfig= file under the hood.
+
+In addition to that, configure your SSH as usual (i.e. make ~git clone~ work if
+called manually). This again may vary per git provider, but an example is
+documented here: [[https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh][Connecting to GitHub with SSH]]
+
+After doing that the command should be working now:
+
+#+BEGIN_EXAMPLE
+$ git config --global url."git@github.com:".insteadOf "https://github.com/"
+$ go get github.com/rmachuca89/go-lab
+#+END_EXAMPLE
+
+**** The =.netrc= File with HTTPS Authentication
+
+This is actually an official recommended way to setup authentication options
+provided on the [[https://golang.org/doc/faq#git_https][golang faq section]], and uses the [[https://www.gnu.org/software/inetutils/manual/html_node/The-_002enetrc-file.html][=.netrc= file]] for network
+authentication configuration.
+
+To authenticate over HTTPS, you can add a line to the =$HOME/.netrc= file
+that ~git~ consults:
+
+: machine github.com login USERNAME password APIKEY
+
+*INFO*: For GitHub accounts, the password can be a [[https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token][personal access token]].
+
+*WARNING*: Remember that =.netrc= is a plain-text file, so make sure that its
+corresponding file access control lists (ACLs) are restricted (i.e. =chmod 600
+~/.netrc=).
+
+**** References:
+- [[https://golang.org/doc/faq#git_https][Why does "go get" use HTTPS when cloning a repository? | Golang Docs]]
+- [[https://stackoverflow.com/questions/32232655/go-get-results-in-terminal-prompts-disabled-error-for-github-private-repo][go get results in "terminal prompts disabled" error for github private repo | Stack Overflow]]
