@@ -2,6 +2,7 @@
 #+AUTHOR: Rodrigo Machuca
 #+DESCRIPTION: org-mode markup content to be parsed and rendered into CommonMarkdown by ox-hugo
 #+STARTUP: overview
+#+SEQ_TODO: TODO DRAFT DONE
 #+HUGO_BASE_DIR: .
 * DONE About
 CLOSED: [2020-09-04 Fri 23:40]
@@ -94,7 +95,7 @@ I will be focusing in the beginning on the following areas or technologies:
 If time and motivation keeps going, I will expand the content to Spanish (my
 native language) once I learn about [[https://gohugo.io/content-management/multilingual/][Hugo internationalization (i18n)]].
 ** DONE ~go-get~ and Private Repositories :golang:
-CLOSED: [2020-09-12 Sat 16:38]
+CLOSED: [2021-02-15 Mon 20:29]
 :PROPERTIES:
 :ID:       347dd1d1-4bae-48cb-b13e-156490d15315
 :EXPORT_FILE_NAME: go-get-and-private-repositories
@@ -166,7 +167,7 @@ required.
 
 GitHub:
 
-: git config --global url."ssh://git@github.com:".insteadOf "https://github.com/"
+: git config --global url."ssh://git@github.com/".insteadOf "https://github.com/"
 
 This is actually updating the =.gitconfig= file under the hood.
 
@@ -177,7 +178,7 @@ documented here: [[https://docs.github.com/en/github/authenticating-to-github/co
 After doing that the command should be working now:
 
 #+BEGIN_EXAMPLE
-$ git config --global url."git@github.com:".insteadOf "https://github.com/"
+$ git config --global url."ssh://git@github.com/".insteadOf "https://github.com/"
 $ go get github.com/rmachuca89/go-lab
 #+END_EXAMPLE
 

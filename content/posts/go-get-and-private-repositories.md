@@ -2,7 +2,7 @@
 title = "go-get and Private Repositories"
 author = ["Rodrigo Machuca"]
 description = "org-mode markup content to be parsed and rendered into CommonMarkdown by ox-hugo"
-date = 2020-09-12T16:38:00-05:00
+date = 2021-02-15T20:29:00-06:00
 tags = ["golang"]
 draft = false
 +++
@@ -24,6 +24,7 @@ package github.com/rmachuca89/go-lab: exit status 128
 
 To make it work as we expect, we will need to make `go get` change the default
 authentication protocol, using one of the options below.
+
 
 ## Force Terminal Prompt with HTTPS Authentication {#force-terminal-prompt-with-https-authentication}
 
@@ -61,6 +62,7 @@ Personal access tokens function like ordinary OAuth access tokens. They can be
 used instead of a password for Git over HTTPS. We require at least the [`repo`
 scope](https://docs.github.com/en/developers/apps/scopes-for-oauth-apps) for it to work.
 
+
 ## Use SSH instead of HTTPS: {#use-ssh-instead-of-https}
 
 You can configure `git` client to authenticate using `SSH` for matching _URL
@@ -71,7 +73,7 @@ required.
 GitHub:
 
 ```text
-git config --global url."ssh://git@github.com:".insteadOf "https://github.com/"
+git config --global url."ssh://git@github.com/".insteadOf "https://github.com/"
 ```
 
 This is actually updating the `.gitconfig` file under the hood.
@@ -83,9 +85,10 @@ documented here: [Connecting to GitHub with SSH](https://docs.github.com/en/gith
 After doing that the command should be working now:
 
 ```text
-$ git config --global url."git@github.com:".insteadOf "https://github.com/"
+$ git config --global url."ssh://git@github.com/".insteadOf "https://github.com/"
 $ go get github.com/rmachuca89/go-lab
 ```
+
 
 ## The `.netrc` File with HTTPS Authentication {#the-dot-netrc-file-with-https-authentication}
 
@@ -103,9 +106,11 @@ machine github.com login USERNAME password APIKEY
 **INFO**: For GitHub accounts, the password can be a [personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
 
 **WARNING**: Remember that `.netrc` is a plain-text file, so make sure that its
-corresponding file access control lists (ACLs) are restricted (i.e. `chmod 600 ~/.netrc`).
+corresponding file access control lists (ACLs) are restricted (i.e. `chmod 600
+~/.netrc`).
+
 
 ## References: {#references}
 
-- [Why does "go get" use HTTPS when cloning a repository? | Golang Docs](https://golang.org/doc/faq#git%5Fhttps)
-- [go get results in "terminal prompts disabled" error for github private repo | Stack Overflow](https://stackoverflow.com/questions/32232655/go-get-results-in-terminal-prompts-disabled-error-for-github-private-repo)
+-   [Why does "go get" use HTTPS when cloning a repository? | Golang Docs](https://golang.org/doc/faq#git%5Fhttps)
+-   [go get results in "terminal prompts disabled" error for github private repo | Stack Overflow](https://stackoverflow.com/questions/32232655/go-get-results-in-terminal-prompts-disabled-error-for-github-private-repo)
