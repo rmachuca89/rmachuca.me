@@ -57,18 +57,18 @@ disqusShortname = "rmachuca"
 
 # Social links
 [[params.social]]
-  name = "github"
-  url = "https://github.com/rmachuca89"
-  icon = "fab fa-github fa-2x"
+  name = "Github"
+  icon = "fa fa-github fa-2x"
   weight = 1
+  url = "https://github.com/rmachuca89"
 [[params.social]]
-  name = "twitter"
-  url = "https://twitter.com/rmachuca89"
-  icon = "fab fa-twitter fa-2x"
+  name = "Twitter"
+  icon = "fa fa-twitter fa-2x"
   weight = 2
+  url = "https://twitter.com/rmachuca89"
 [[params.social]]
-  name = "linkedIn"
-  icon = "fab fa-linkedin fa-2x"
+  name = "LinkedIn"
+  icon = "fa fa-linkedin fa-2x"
   weight = 3
   url = "https://linkedin.com/in/rmachuca89/"
 
