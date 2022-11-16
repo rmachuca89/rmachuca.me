@@ -4,3 +4,19 @@
 
 This is my personal site built with Hugo and deployed in Netlify:
 https://rmachuca.me
+
+## Common Operations
+
+### Update Theme
+
+[hugo-coder](https://github.com/luizdepra/hugo-coder) theme is installed as a `git submodule`; hence, to update it use the following command:
+
+```sh
+git submodule foreach git pull origin main
+```
+
+### Run Local Hugo Server
+
+``` sh
+hugo server
+```
